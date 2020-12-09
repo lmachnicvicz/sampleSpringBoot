@@ -8,6 +8,7 @@
 	<artifactId>volvo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>volvo</name>
+	<packaging>jar</packaging>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -15,6 +16,17 @@
 
 		<springfox.swagger2.version>2.9.2</springfox.swagger2.version>
 		<springfox.swagger.ui.version>2.9.2</springfox.swagger.ui.version>
+
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.plugin>3.7.0</maven.compiler.plugin>
+		<maven.resources.plugin>3.0.2</maven.resources.plugin>
+		<maven.jar.plugin>3.0.2</maven.jar.plugin>
+		<maven.war.plugin>3.2.0</maven.war.plugin>
+		<maven.ear.plugin>3.0.0</maven.ear.plugin>
+		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 
 	</properties>
 
@@ -83,6 +95,18 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<dependencies>
+					<!-- Force using the latest JUnit 47 provider -->
+					<dependency>
+						<groupId>org.apache.maven.surefire</groupId>
+						<artifactId>surefire-junit47</artifactId>
+						<version>2.8</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 		</plugins>
 	</build>
