@@ -3,7 +3,6 @@ package br.com.leandro.volvo.entity;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,7 +18,7 @@ public class Department {
 	private String name;
 	private String description;
 
-	@OneToMany(mappedBy = "department", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "department", orphanRemoval = true)
 	private Set<User> users = new HashSet<>();
 
 	protected Department() {

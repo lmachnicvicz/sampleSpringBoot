@@ -11,6 +11,10 @@ public class DepartmentResponse extends DepartmentRequest {
 	@ApiModelProperty(value = "Department's user list", example = "", required = false)
 	private List<UserResponse> users = new ArrayList<>();
 
+	public DepartmentResponse() {
+
+	}
+
 	public DepartmentResponse(Long id, String name, String description, List<UserResponse> users) {
 		super(name, description);
 		this.id = id;
